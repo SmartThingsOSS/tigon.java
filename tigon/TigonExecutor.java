@@ -1,5 +1,6 @@
 package com.smartthings.android.html.tigon;
 
+import android.support.annotation.NonNull;
 import android.webkit.WebView;
 
 import com.google.gson.Gson;
@@ -7,11 +8,11 @@ import com.google.gson.Gson;
 import com.smartthings.android.html.Executor;
 
 import timber.log.Timber;
+
 /**
  * TigonExecutor provides a simple interface for interacting with Javascript. It assumes Tigon.js is
  * included in the HTML.
  *
- * Created by jehyoung on 5/10/16.
  */
 public class TigonExecutor implements Executor {
 
@@ -19,7 +20,8 @@ public class TigonExecutor implements Executor {
     private WebView webView;
     private Gson gson;
 
-    public TigonExecutor(WebView webView, Gson gson) {
+    public TigonExecutor(@NonNull WebView webView,
+                         @NonNull Gson gson) {
         this.webView = webView;
         this.gson = gson;
     }

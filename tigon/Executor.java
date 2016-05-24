@@ -1,10 +1,5 @@
 package com.smartthings.android.html;
 
-/**
- * Executer provides a simple interface for interacting with Javascript.
- *
- * Created by jehyoung on 5/18/16.
- */
 
 public interface Executor {
 

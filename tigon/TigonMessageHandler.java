@@ -1,5 +1,6 @@
 package com.smartthings.android.html.tigon;
 
+import android.support.annotation.NonNull;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
@@ -9,24 +10,20 @@ import com.google.gson.JsonSyntaxException;
 import com.smartthings.android.html.MessageDelegator;
 
 import timber.log.Timber;
-/**
- * This will receive the messages from the Tigon javascript object which is including tigon.js.
- *
- * Created by jehyoung on 5/10/16.
- */
+
+
 public class TigonMessageHandler {
 
-    final private Gson gson;
-    final private WebView webView;
-    final private MessageDelegator messageDelegator;
-    final private TigonExecutor tigonExecutor;
+    private final Gson gson;
+    private final MessageDelegator messageDelegator;
+    private final TigonExecutor tigonExecutor;
     private TigonMessage tigonMessage;
 
-    public TigonMessageHandler(Gson gson, WebView webView, MessageDelegator messageDelegator) {
+    public TigonMessageHandler(@NonNull Gson gson,
+                               @NonNull WebView webView,
+                               @NonNull MessageDelegator messageDelegator) {
         this.messageDelegator = messageDelegator;
         this.gson = gson;
-        this.webView = webView;
-//        this.tigonExecutor = tigonExecutor;
 
         tigonExecutor = new TigonExecutor(webView, gson);
     }
